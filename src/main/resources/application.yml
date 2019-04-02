@@ -1,0 +1,29 @@
+spring:
+  data:
+    mongodb:
+      database: collabu
+      host: localhost
+      port: 27017
+      repositories:
+        type: AUTO
+
+jackson:
+  serialization:
+    WRITE_DATES_AS_TIMESTAMPS: false
+
+logging:
+  file: /collabu/collabu.log
+  pattern:
+    console: '%d %-5level %logger : %msg%n'
+    file: '%d %-5level [%thread] %logger : %msg%n'
+  level:
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+
+aws:
+  sqs:
+    queue:
+      url: XXXXX
+  region: XXXX
+  accessKeyId: XXXX
+  accessKeySecret: XXXX
