@@ -4,6 +4,7 @@ import com.collabu.utils.ErrorHandler;
 import com.collabu.model.User;
 import com.collabu.payload.UserContactDto;
 import com.collabu.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -84,7 +85,7 @@ public class UserResource {
 
     @PatchMapping("/{userId}")
     public ResponseEntity<?> patchUser(@PathVariable Long userId,
-                                       @RequestBody UserContactDto userContactDto) {
+                                       @RequestBody UserContactDto userContactDto) throws JsonProcessingException {
         Optional<User> optUser = userService.updateUserContact(userId, userContactDto);
         return ResponseEntity
                 .ok()

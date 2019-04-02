@@ -3,6 +3,7 @@ package com.collabu.service;
 import com.collabu.model.User;
 import com.collabu.payload.UserContactDto;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.Optional;
 
 public interface UserService {
@@ -15,5 +16,5 @@ public interface UserService {
 
     void delete(Long userId);
 
-    Optional<User> updateUserContact(Long userId, UserContactDto user);
+    Optional<User> updateUserContact(Long userId, UserContactDto user) throws JsonProcessingException;
 }
